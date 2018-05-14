@@ -1,4 +1,6 @@
 # Final-Project
+Group members: Leona Wada, Katie Chen, Jennifer Li and Amir Mola
+
 For our final project, we will look into popular movies by state, and also build a search system that users can search for the popularity of movies, recommendations and similarity of the movie they like.
 
 **What is the dataset you'll be working with? Please include background on who collected the data, where you accessed it, and any additional information we should know about how this data came to be.**

@@ -18,9 +18,6 @@ We will use The Movie Database API from TMBD to access the top 20 most popular m
 **What types of data-wrangling (reshaping, reformatting, etc.) will you need to do to your data?**\
 We will combine several datasets by using join method. After that, we will use select method to select some columns that we want to keep. We will need to reformat the data by state and also by the name of the movies. For data visualization we will need to make a map of U.S. with the most popular movies displayed on each state, or multiple movies based on the trend.
 
-**How will you be reading in your data (i.e., are you using an API, or is it a static .csv/.json file)?**
-We will use the data collected from IMDB regarding the top 20 movies of all time. We will then use Google Trends and enter the movie name and download a movie specific .csv file. The .csv file will have each state as an individual row, and provide an indexed and normalized value for its web searches. The value is calculated as (# of queries for keyword) / (total Google search queries). Moreover, the 0 - 100 values are relative, not absolute, measures.
-
 **What (major/new) libraries will be using in this project (no need to list common libraries that are used in many projects such as dplyr)?**\
 httr, jsonlite, plotly, knitr, stringr libraries.
 

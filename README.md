@@ -13,10 +13,16 @@ It will answer where a specific movie is googled the most, what genres are popul
 **Create at least 5 GitHub Issues as your first set of steps to take in the project.  You should assign these to individual group members to complete**
 
 **How will you be reading in your data (i.e., are you using an API, or is it a static .csv/.json file)?**
-We will use the data collected from IMDB regarding the top 20 movies of all time. We will then use Google Trends and enter the movie name and download a movie specific .csv file. The .csv file will have each state as an individual row, and provide an indexed and normalized value for its web searches. The value is calculated as (# of queries for keyword) / (total Google search queries). Moreover, the 0 - 100 values are relative, not absolute, measures. 
+We will use the data collected from IMDB regarding the top 20 movies of all time. We will then use Google Trends and enter the movie name and download a movie specific .csv file. The .csv file will have each state as an individual row, and provide an indexed and normalized value for its web searches. The value is calculated as (# of queries for keyword) / (total Google search queries). Moreover, the 0 - 100 values are relative, not absolute, measures.
 
 **What types of data-wrangling (reshaping, reformatting, etc.) will you need to do to your data?**
+We will need to reformat the data by state and also by the name of the movies.
+For data visualization we will need to make a map of U.S. with the most popular
+movies displayed on each state, or multiple movies based on the trend.
 
 **What (major/new) libraries will be using in this project (no need to list common libraries that are used in many projects such as dplyr)?**
 
 **What major challenges do you anticipate?**
+Gathering the data and sorting them in order,
+Rendering the data into a map
+Turning our analysis into a shiny app

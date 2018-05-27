@@ -16,12 +16,17 @@ get_data <- function(pagenum) {
   body <- fromJSON(response_content)$results
 }
 
-# get more page of dataset
-make_csv <- function(pagenum) {
-  last_page <- get_data(1)
-  for (i in 2:pagenum) {
+# get 40 pages of dataset at each time, take 15 seconds to get another 40 pages
+make_csv <- function(first_page, total_page) {
+  last_page <- get_data(first_page)
+  for (i in first_page + 1:total_page) {
     last_page <- rbind(last_page, get_data(i))
   }
   return(last_page)
 }
 
+page1 <- make_csv(1, 40)
+page2 <- make_csv(41, 80)
+tmdb_data <- rbind(page1, page2)
+tmdb_data$genre_ids <- vapply(tmdb_data$genre_ids, paste, collapse = ", ", character(1L))
+write.csv(tmdb_data, file = "data/tmdb_data.csv", row.names = FALSE)

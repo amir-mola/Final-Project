@@ -9,7 +9,7 @@ url <- function(pagenum) {
   url_full <- paste0(base_url, resource)
 }
 
-# get one page dataset 
+# get one page dataset
 get_data <- function(pagenum) {
   response <- GET(url(pagenum))
   response_content <- content(response, type = "text")

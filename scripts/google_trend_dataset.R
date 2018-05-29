@@ -4,9 +4,12 @@ library(dplyr)
 
 
 
+
 # get 41-80 pages, should be 800 rows, if not wait 20 seconds to run the code
 
 data <- read.csv("../data/tmdb_data.csv")
+
+
 
 # for one movie
 google_trend <- function(dataset, row_num) {

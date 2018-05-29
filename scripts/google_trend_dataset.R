@@ -1,13 +1,6 @@
 library(gtrendsR)
 library(dplyr)
-source("tmdb_dataset.R")
 
-movie1 <- make_csv(1, 40)
-
-# get 41-80 pages, should be 800 rows, if not wait 20 seconds to run the code
-movie2 <- make_csv(41, 80)
-
-tmdb_dataset <- rbind(movie1, movie2)
 
 # for one movie
 google_trend <- function(dataset, row_num) {

@@ -3,6 +3,7 @@ library(jsonlite)
 source("api.R")
 
 # get the full url
+pagenum <- 1
 url <- function(pagenum) {
   base_url <- "https://api.themoviedb.org"
   resource <- paste0("/3/discover/movie?api_key=", api_key, "&sort_by=popularity.desc&page=", pagenum)
@@ -13,7 +14,7 @@ url <- function(pagenum) {
 get_data <- function(pagenum) {
   response <- GET(url(pagenum))
   response_content <- content(response, type = "text")
-  body <- fromJSON(response_content)$results
+  body <- fromJSON(response_content)
 }
 
 # get 40 pages of dataset at each time, take 15 seconds to get another 40 pages

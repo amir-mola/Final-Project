@@ -2,6 +2,7 @@ library(httr)
 library(jsonlite)
 source("api.R")
 
+movie_id <- 284053
 url <- function(movie_id){
   base_url <- "https://api.themoviedb.org"
   resource <- paste0("/3/movie/", movie_id,"?api_key=", api_key)
@@ -15,8 +16,6 @@ get_data <- function(movie_id){
   
   C <- body[["production_companies"]][["name"]]
   co <- body[["production_companies"]][["origin_country"]]
-  con <- body[["production_companies"]][["origin_country"]]
-  spl <- body[["spoken_languages"]][["iso_639_1"]]
-  df <- data.frame(c,co,con,spl)
+  df <- data.frame(c,co)
   return(df)
 }

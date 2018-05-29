@@ -4,12 +4,6 @@ library(dplyr)
 library(plotly)
 source("api.R")
 
-# get genre list
-response <- GET(paste0("https://api.themoviedb.org/3/genre/movie/list?api_key=", api_key))
-response_content <- content(response, type = "text")
-genre_list <- fromJSON(response_content)$genres
-
-
 data <- read.csv("../data/tmdb_data.csv", stringsAsFactors = FALSE)
 
 
@@ -41,7 +35,7 @@ scatter_plot <- function(dataset, year_start, year_end, genre, rating_low, ratin
   plot_ly(new_data, x = ~release_year, y = ~vote_average, color = ~original_language,
           mode = "markers", marker = list(opacity = .7, size = 10)) %>% 
           layout(title = "Movie Release Year vs Vote Average",
-                xaxis = list(range = c(1930, xmax), title = "Release Year"),
+                xaxis = list(range = c(1920, xmax), title = "Release Year"),
                 yaxis = list(range = c(0, ymax), title = "Vote Average")
           ) %>% 
   return()

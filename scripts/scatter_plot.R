@@ -4,9 +4,6 @@ library(dplyr)
 library(plotly)
 source("api.R")
 
-data <- read.csv("../data/tmdb_data.csv", stringsAsFactors = FALSE)
-
-
 scatter_plot <- function(dataset, year_start, year_end, genre, rating_low, rating_high) {
   # create new column called "release_year", get rid of NA for "release_year" column
   dataset$release_year <- as.numeric(format(as.Date(dataset$release_date, "%Y-%m-%d"), "%Y"))

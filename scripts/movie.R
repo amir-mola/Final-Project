@@ -4,7 +4,7 @@ library(dplyr)
 library(plotly)
 source("api.R")
 
-# Reads in the tmbd data file ---------------------------------------------
+# Reads in the tmbd data file --------------------------------------------
 data <- read.csv(file = "../data/tmdb_data.csv")
 
 

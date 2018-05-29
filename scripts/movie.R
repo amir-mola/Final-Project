@@ -9,6 +9,8 @@ movie_id <- 383498
   
 
 
-  response <- GET(url(movie_id))
+  response <- GET(url_full)
   response_content <- content(response, type = "text")
   body <- fromJSON(response_content)$results
+   
+  

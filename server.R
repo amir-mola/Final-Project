@@ -23,4 +23,7 @@ shinyServer(function(input, output) {
     return(build_graph(data, input$yearvar))
   })
   
+  output$threeDplot <- renderPlotly({
+    return(three_d_rec(input$movie_name))
+  })
 })

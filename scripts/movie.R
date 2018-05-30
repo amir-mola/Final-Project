@@ -5,7 +5,7 @@ library(plotly)
 source("scripts/api.R")
 
 # Reads in the tmbd data file --------------------------------------------
-data <- read.csv(file = "data/tmdb_data.csv")
+data <- read.csv("data/tmdb_data.csv", stringsAsFactors = FALSE)
 
 
 # GIven a movie name, will find the id of that movie ----------------------
@@ -42,7 +42,7 @@ recommendation <- function(movie_name, count) {
 # vote average and date of released
 three_d_rec <- function(movie_name){
   dataset <- get_data(movie_name)
-p <- plot_ly(dataset, x = ~vote_count, y = ~vote_average, z = ~release_date, 
+  plot_ly(dataset, x = ~vote_count, y = ~vote_average, z = ~release_date, 
              text = ~original_title,
   marker = list(color = ~vote_average, colorscale = c('#FFE1A1', '#683531'),
                 showscale = TRUE)) %>%
@@ -59,7 +59,6 @@ p <- plot_ly(dataset, x = ~vote_count, y = ~vote_average, z = ~release_date,
            yref = 'paper',
            showarrow = FALSE
          ))
-  return(p)
 }
 
 

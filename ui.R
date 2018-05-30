@@ -5,7 +5,7 @@ library(shiny)
 library(plotly)
 library(lubridate)
 
-data <- read.csv("data/tmdb_data.csv", stringsAsFactors = FALSE)
+data <- read.csv("./data/tmdb_data.csv", stringsAsFactors = FALSE)
 a <- ymd(data$release_date)
 data$release_year <- year(a)
 data <- arrange(data, -release_year)
@@ -16,11 +16,18 @@ genre_list <- fromJSON(response_content)$genres
 
 shinyUI(navbarPage(
   theme = "style.css",
-  "Information about movies",
+  headerPanel("Information about movies"),
   tabPanel(
     "Summary",
     titlePanel("Summary of movie dataset"),
-    tags$p("gfgdgdfgdf")
+    tags$div(
+      tags$p("Project Overview
+
+             This report demonstrates an overview of movie titles, popularities, and genres. The purpose of the report is to provide information regarding highly rated movies so that the viewer can see which year released multiple hits, which genres are popular, and which movie they should watch given their preferences. We believe that the production side of the movie industry could heavily benefit from our data, as it will show general trends amongst movies.
+             "), 
+      tags$p("Second paragraph"), 
+      tags$p("Third paragraph")
+    )
   ),
                     
   tabPanel(
@@ -48,5 +55,15 @@ shinyUI(navbarPage(
        ),
       mainPanel(plotlyOutput("barplot"))
      )
+  ),
+  tabPanel(
+    "threeDplot",
+    titlePanel("movie recommandations"),
+    sidebarLayout(
+      sidebarPanel(
+        selectInput("movie_name", label = "Please select a movie", choices = data$title, selected = "Deadpool 2")
+      ),
+      mainPanel(plotlyOutput("threeDplot"))
+    )
   )
 ))

@@ -1,6 +1,6 @@
 library(httr)
 library(jsonlite)
-source("./scripts/api.R")
+source("scripts/api.R")
 library(shiny)
 library(plotly)
 library(lubridate)
@@ -93,7 +93,7 @@ shinyUI(navbarPage(
     titlePanel("movie recommandations"),
     sidebarLayout(
       sidebarPanel( 
-        selectInput("movie_name", label = "Please select a movie", choices = data$title, selected = "Deadpool 2")
+        selectInput("movie", label = "Please select a movie", choices = data$title, selected = "Deadpool 2")
       ),
       mainPanel(plotlyOutput("threeDplot"))
     )

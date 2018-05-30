@@ -23,3 +23,5 @@ We will combine several datasets by using **join** and **rbind** function. After
 In this project, *httr*, *jsonlite*, *plotly*, *lubridate*, *shiny* libraries will be used. 
 
 The major challenges in this project would be getting the exact information we need. For example, by using TMDB API, we can only access 20 movies at a time, so we need to write a function to get the number of movies we want by combining all small dataset into a single csv file. Others such as gathering the data and sorting them in order, rendering the data into plot, turning our analysis into a shiny app are also major challenges that we need to overcome. 
+
+**Final Project Website**: https://katiechen.shinyapps.io/Final-Project/

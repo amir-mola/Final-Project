@@ -30,12 +30,12 @@ scatter_plot <- function(dataset, year_start, year_end, genre, rating_low,
       "https://api.themoviedb.org/3/configuration/languages?api_key=",
       api_key
     ))
-  response_content_ <- content(response_new, type = "text")
-  language_list <- fromJSON(response_content_)
+  response_content_new <- content(response_new, type = "text")
+  language_list <- fromJSON(response_content_new)
 
   # join dataset with language list
   language_list$original_language <- language_list$iso_639_1
-  language <- language_list %>% select(original_language, english_name)
+  language <- select(language_list, original_language, english_name)
   dataset <- full_join(dataset, language)
 
   # max for x-axis and y-axis

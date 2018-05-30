@@ -23,7 +23,7 @@ shinyUI(navbarPage(
     "OVERVIEW",
     tags$div(
       HTML('<center>
-           <img src="https://content.mycutegraphics.com/graphics/movie/movie-night.png"
+  <img src="https://content.mycutegraphics.com/graphics/movie/movie-night.png"
            width="400"></center>'),
       tags$h2("Project Overview"),
       tags$p("This report demonstrates an overview of movie titles,
@@ -44,18 +44,18 @@ shinyUI(navbarPage(
              "),
       tags$h2("Data"),
       tags$p("Using an API from ",
-             tags$a(href="https://www.themoviedb.org/documentation/api", "TMDB"),
+             tags$a(href =
+                      "https://www.themoviedb.org/documentation/api", "TMDB"),
              ", we created a dataset that includes 1600
              movie titles from 1931 to 2018. Along with the title, other
              critical information that our data contains are a vote count,
              vote average, popularity, original language, genre ids, and
              overview. "),
-      
+
       tags$h2("Questions"),
       tags$li("What genres were popular in a given year?"),
       tags$li("Did certain years have more highly voted movies?"),
       tags$li("What movies are recommended given a previously liked movie?"),
-      
       tags$h2("Structure"),
       tags$li("The first tab is a scatterplot that shows the relationship
               between movies' years of release and their vote averages. The
@@ -79,12 +79,9 @@ shinyUI(navbarPage(
               languages are more widely spoken?"),
       tags$li("Are certain movie genres voted on more than others overall?"),
       tags$li("What percent of highly voted movies are rated for adults?"),
-      
       tags$h2("Project Creators"),
-      
       tags$div(
         class = "people-container",
-        
         tags$div(
           tags$img(
             src = "image/amir.jpg", width = "200px",
@@ -124,7 +121,6 @@ shinyUI(navbarPage(
       )
       )
       ),
-  
   tabPanel(
     "SCATTER PLOT",
     titlePanel("Explore Movies by Year, Genre, and Vote Averages"),
@@ -151,7 +147,6 @@ shinyUI(navbarPage(
       mainPanel(plotlyOutput("scatterplot"))
     )
     ),
-  
   tabPanel(
     "BAR GRAPH",
     titlePanel("Movies in a Certain Year Categorized by Genre"),
@@ -184,7 +179,7 @@ shinyUI(navbarPage(
                     choices = data$title, selected = "Deadpool 2"
         )
       ),
-      mainPanel(plotlyOutput("threeDplot"))
+      mainPanel(plotlyOutput("three_d_plot"))
     )
     )
       ))

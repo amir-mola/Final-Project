@@ -17,19 +17,11 @@ h2 {
 }
 
 .navbar {
-<<<<<<< HEAD
-  background-color: DeepSkyBlue;
-=======
   background-color: #ffffff;
->>>>>>> e2f4e4837a811e2a96ab804c845e1f3a82d7befc
 }
 
 
 body {
-<<<<<<< HEAD
-  background-color: lightcyan;
-}
-=======
   background-color: #e5ffff;
   color: #45565c;
 }
@@ -45,4 +37,4 @@ body {
 .people-container div h3 {
   text-align: center;
 }
->>>>>>> e2f4e4837a811e2a96ab804c845e1f3a82d7befc
+

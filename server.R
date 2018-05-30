@@ -25,11 +25,7 @@ shinyServer(function(input, output) {
     return(build_graph(data, input$yearvar))
   })
 
-<<<<<<< HEAD
   output$three_d_plot <- renderPlotly({
-=======
-  output$threeDplot <- renderPlotly({
->>>>>>> e2f4e4837a811e2a96ab804c845e1f3a82d7befc
     return(three_d_rec(data, as.character(input$movie)))
   })
 })

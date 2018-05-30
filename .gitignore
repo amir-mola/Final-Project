@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # History files
 .Rhistory
 
@@ -6,3 +7,8 @@
 
 # Ignore keys
 *api*
+=======
+./scripts/api.R
+
+./www/image
+>>>>>>> b8657bb215d122f246de819d30c0043326da663c

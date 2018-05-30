@@ -35,7 +35,8 @@ shinyUI(navbarPage(
         tags$li("What movies are recommended given a previously liked movie title?"),
 
       tags$h2("Structure"),
-      tags$li("The first tab is a scatterplot that shows"),
+      tags$li("The first tab is a scatterplot that shows the relationship between movies’ year of release and their vote average. User is able to select the genre, year and the vote count to find see this relationship more in detail. The data are colored based on the language of the movie. 
+"),
       tags$li("The second tab is a bar graph that provides the viewer information regarding release years 
       and genres. The user selects a year from the side bar and is shown a bar graph of the movies released that year categorized by genre. Most movies have multiple genres, so there are overlaps within the shown data."),
       tags$li("The last tab shows a 3D plot of maximum of 20 recommended movies (based on the selected movie), and their vote count, vote average and release date.
@@ -46,23 +47,38 @@ shinyUI(navbarPage(
         tags$li("Does the  original language affect the voting ranking as some languages are more widely spoken?
 "),
       tags$h2("Project Creators"),
-      tags$li("Amir Mola"),
-      tags$img(src = "https://scontent.fsea1-1.fna.fbcdn.net/v/t1.0-1/18033341_417189041992204_458043244687472060_n.jpg?_nc_cat=0&_nc_eui2=AeHl4Q81BR0RuOkZgK43sNHzeGyugdy9yucKgCnE0gbYcNyB-KuTm-cgxkpvEFozFTwmfvyNL7JMcvLbiRp6DmdTmt3Sz4pMOZnhrMr8P-_U-w&oh=15a95c2ea00a8588df116c50204d3543&oe=5BBADD44", width = "200px", height = "200px"),
-      tags$li("Leona Wada"),
-      tags$img(src = "https://media.licdn.com/dms/image/C4D03AQFfLeltdKQYdQ/profile-displayphoto-shrink_800_800/0?e=1533168000&v=beta&t=9esnBSPiB-lu3lrz98j_FXX5TeJaGgCMIZC4QUDWs-U", width = "200px", height = "200px"),
-      tags$li("Katie Chen"),
-      tags$img(src = "https://media.licdn.com/dms/image/C5603AQHh_BurGeIptQ/profile-displayphoto-shrink_800_800/0?e=1533168000&v=beta&t=LR8Uad5pJuwlzBxArst6z3Bb6COIaptqc1VID5dH_N0", width = "200px", height = "200px"),
-    tags$li("Jennifer Li"),
-    tags$img(src = "https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/27067724_2060265067333436_3074257672452513759_n.jpg?oh=1a75daafb7fb762458c914dc26b5f99b&oe=5AEB5A9A", width = "200px", height = "200px")
+      
+        
+      tags$div(
+        class = 'people-container',
+        
+        tags$div(
+          tags$img(src = "/image/amir.jpg", width = "200px", height = "200px"),
+          tags$h5("Amir Mola")
+        ),
+        tags$div(
+                 tags$img(src = "/image/katie.jpg", width = "200px", height = "200px"),
+                 tags$h5("Katie Chen")
+                ),
+        tags$div(
+          tags$img(src = "/image/leona.jpg", width = "200px", height = "200px"),
+          tags$h5("Leona Wada")
+        ),
+        tags$div(
+          tags$img(src = "/image/jennifer.jpg", width = "200px", height = "200px"),
+          tags$h5("Jennifer Li")
+        )
+      )
+      
     )),
                     
   tabPanel(
-     "scatterplot",
+     "Scatterplot",
      titlePanel("Movie explore"),
-     tags$p("The first tab is a scatterplot that shows"),
+     tags$p("The first tab is a scatterplot that shows the relationship between movies’ year of release and their vote average. User is able to select the genre, year and the vote count to find see this relationship more in detail. The data are colored based on the language of the movie. 
+"),
      sidebarLayout(
        sidebarPanel(
-         tags$p("The first tab is a scatterplot that shows"),
          selectInput("genre", label = "Please select a genre", 
                      choices = c("", genre_list$name)),
          sliderInput("slider1", label = "Please select a year range", min = 1920, 
@@ -75,27 +91,33 @@ shinyUI(navbarPage(
   ),
                     
   tabPanel(
-     "barplot",
-     titlePanel("genres by year"),
+     "Barplot",
+     titlePanel("Genres by year"),
      tags$p("The second tab is a bar graph that provides the viewer information regarding release years 
       and genres. The user selects a year from the side bar and is shown a bar graph of the movies released that year categorized by genre. Most movies have multiple genres, so there are overlaps within the shown data."),
      sidebarLayout(
        sidebarPanel(
-         tags$p("The second tab is a bar graph that provides the viewer information regarding release years 
-      and genres. The user selects a year from the side bar and is shown a bar graph of the movies released that year categorized by genre. Most movies have multiple genres, so there are overlaps within the shown data."),
         selectInput("yearvar", label = "Please select release year", choices = data$release_year, selected = 4)
        ),
       mainPanel(plotlyOutput("barplot"))
      )
   ),
   tabPanel(
-    "threeDplot",
-    titlePanel("movie recommandations"),
+    "3Dplot",
+    titlePanel("Movie recommandations"),
+    tags$p("The last tab shows a 3D plot of maximum of 20 recommended movies (based on the selected movie), and their vote count, vote average and release date.
+            "),
     sidebarLayout(
       sidebarPanel( 
         selectInput("movie", label = "Please select a movie", choices = data$title, selected = "Deadpool 2")
       ),
       mainPanel(plotlyOutput("threeDplot"))
     )
+  ),
+  tabPanel(
+    "Source",
+    tags$h4("For this project, we used dataset from ",
+    tags$a(href="https://www.themoviedb.org/documentation/api", "TMDb"))
+    
   )
 ))

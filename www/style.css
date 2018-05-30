@@ -13,3 +13,15 @@ h1 {
 body {
   background-color: lightcyan;
 }
+
+.people-container div {
+  display: inline-block;
+}
+
+.people-container div img {
+  display: block;
+}
+
+.people-container div h3 {
+  text-align: center;
+}

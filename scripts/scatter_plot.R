@@ -2,7 +2,7 @@ library(httr)
 library(jsonlite)
 library(dplyr)
 library(plotly)
-source("api.R")
+source("./scripts/api.R")
 
 scatter_plot <- function(dataset, year_start, year_end, genre, rating_low, rating_high) {
   # create new column called "release_year", get rid of NA for "release_year" column

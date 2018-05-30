@@ -2,10 +2,10 @@ library(httr)
 library(jsonlite)
 library(dplyr)
 library(plotly)
-source("api.R")
+source("./scripts/api.R")
 
 # Reads in the tmbd data file --------------------------------------------
-data <- read.csv(file = "../data/tmdb_data.csv")
+data <- read.csv(file = "./data/tmdb_data.csv")
 
 
 # GIven a movie name, will find the id of that movie ----------------------

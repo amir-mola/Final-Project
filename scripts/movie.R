@@ -2,10 +2,10 @@ library(httr)
 library(jsonlite)
 library(dplyr)
 library(plotly)
-source("./scripts/api.R")
+source("scripts/api.R")
 
 # Reads in the tmbd data file --------------------------------------------
-data <- read.csv(file = "./data/tmdb_data.csv")
+data <- read.csv(file = "data/tmdb_data.csv")
 
 
 # GIven a movie name, will find the id of that movie ----------------------
@@ -14,11 +14,6 @@ id_finder <- function(movie_name){
   return(movie$id)
 }
 
-
-  response <- GET(url_full)
-  response_content <- content(response, type = "text")
-  body <- fromJSON(response_content)$results
-   
   
 # Based on a given movie name, gets movie recommendation data -------------
 get_data <- function(movie_name){

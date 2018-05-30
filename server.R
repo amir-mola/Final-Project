@@ -3,12 +3,12 @@ library(dplyr)
 library(plotly)
 library(lubridate)
 
-source("./scripts/scatter_plot.R")
-source("./scripts/movie.R")
-source("./scripts/genre_bar.R")
-source("./scripts/api.R")
+source("scripts/scatter_plot.R")
+source("scripts/movie.R")
+source("scripts/genre_bar.R")
+source("scripts/api.R")
 
-data <- read.csv("./data/tmdb_data.csv", stringsAsFactor = FALSE)
+data <- read.csv("data/tmdb_data.csv", stringsAsFactor = FALSE)
 a <- ymd(data$release_date)
 data$release_year <- year(a)
 

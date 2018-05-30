@@ -87,7 +87,7 @@ shinyUI(navbarPage(
 
         tags$div(
           tags$img(
-            src = "/image/amir.jpg", width = "200px",
+            src = "image/amir.jpg", width = "200px",
             height = "200px"
           ),
           tags$h5("Amir Mola"),
@@ -96,7 +96,7 @@ shinyUI(navbarPage(
         ),
         tags$div(
           tags$img(
-            src = "/image/katie.jpg", width = "200px",
+            src = "image/katie.jpg", width = "200px",
             height = "200px"
           ),
           tags$h5("Katie Chen"),
@@ -105,7 +105,7 @@ shinyUI(navbarPage(
         ),
         tags$div(
           tags$img(
-            src = "/image/leona.jpg", width = "200px",
+            src = "image/leona.jpg", width = "200px",
             height = "200px"
           ),
           tags$h5("Leona Wada"),
@@ -114,7 +114,7 @@ shinyUI(navbarPage(
         ),
         tags$div(
           tags$img(
-            src = "/image/jennifer.jpg", width = "200px",
+            src = "image/jennifer.jpg", width = "200px",
             height = "200px"
           ),
           tags$h5("Jennifer Li"),

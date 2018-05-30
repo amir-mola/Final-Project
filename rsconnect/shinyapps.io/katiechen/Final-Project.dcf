@@ -5,8 +5,8 @@ account: katiechen
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 350975
-bundleId: 1399894
+bundleId: 1399941
 url: https://katiechen.shinyapps.io/Final-Project/
-when: 1527666059.34864
+when: 1527667490.36792
 asMultiple: FALSE
 asStatic: FALSE

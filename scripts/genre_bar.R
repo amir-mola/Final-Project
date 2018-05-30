@@ -46,44 +46,120 @@ western <- data[grepl("37", data$genre_ids), ]
 build_graph <- function(data, yearvar) {
   ## Filter out genre to the specific year and count how many movies there are
   action <- filter(action, release_year == yearvar)
-  action_count <- nrow(action)
+  action_count <- if(nrow(action) > 0) {
+    action_count <- nrow(action)
+  } else {
+    action_count <- 0
+  }
   adventure <- filter(adventure, release_year == yearvar)
-  adventure_count <- nrow(adventure)
+  adventure_count <- if(nrow(adventure) > 0) {
+    adventure_count <- nrow(adventure)
+  } else {
+    adventure_count <- 0
+  }
   animation <- filter(animation, release_year == yearvar)
-  animation_count <- nrow(animation)
+  animation_count <- if(nrow(animation) > 0) {
+    animation_count <- nrow(animation)
+  } else {
+    animation_count <- 0
+  }
   comedy <- filter(comedy, release_year == yearvar)
-  comedy_count <- nrow(comedy)
+  comedy_count <- if(nrow(comedy) > 0) {
+    comedy_count <- nrow(comedy)
+  } else {
+    comedy_count <- 0
+  }
   crime <- filter(crime, release_year == yearvar)
-  crime_count <- nrow(crime)
+  crime_count <- if(nrow(crime) > 0) {
+    crime_count <- nrow(crime)
+  } else {
+    crime_count <- 0
+  }
   documentary <- filter(documentary, release_year == yearvar)
-  doc_count <- nrow(documentary)
+  doc_count <- if(nrow(documentary) > 0) {
+    doc_count <- nrow(documentary)
+  } else {
+    doc_count <- 0
+  }
   drama <- filter(drama, release_year == yearvar)
-  drama_count <- nrow(drama)
+  drama_count <- if(nrow(drama) > 0) {
+    drama_count <- nrow(drama)
+  } else {
+    drama_count <- 0
+  }
   family <- filter(family, release_year == yearvar)
-  fam_count <- nrow(family)
+  fam_count <- if(nrow(family) > 0) {
+    fam_count <- nrow(family)
+  } else {
+    fam_count <- 0
+  }
   fantasy <- filter(fantasy, release_year == yearvar)
-  fantasy_count <- nrow(fantasy)
+  fantasy_count <- if(nrow(fantasy) > 0) {
+    fantasy_count <- nrow(fantasy)
+  } else {
+    fantasy_count <- 0
+  }
   history <- filter(history, release_year == yearvar)
-  hist_count <- nrow(history)
+  hist_count <- if(nrow(history) > 0) {
+    hist_count <- nrow(history)
+  } else {
+    hist_count <- 0
+  }
   horror <- filter(horror, release_year == yearvar)
-  horror_count <- nrow(horror)
+  horror_count <- if(nrow(horror) > 0) {
+    horror_count <- nrow(horror)
+  } else {
+    horror_count <- 0
+  }
   music <- filter(music, release_year == yearvar)
-  music_count <- nrow(music)
+  music_count <- if(nrow(music) > 0) {
+    music_count <- nrow(music)
+  } else {
+    music_count <- 0
+  }
   mystery <- filter(mystery, release_year == yearvar)
-  mystery_count <- nrow(mystery)
+  mystery_count <- if(nrow(mystery) > 0) {
+    mystery_count <- nrow(mystery)
+  } else {
+    mystery_count <- 0
+  }
   romance <- filter(romance, release_year == yearvar)
-  rom_count <- nrow(romance)
+  rom_count <- if(nrow(romance) > 0) {
+    rom_count <- nrow(romance)
+  } else {
+    rom_count <- 0
+  }
   sci_fi <- filter(sci_fi, release_year == yearvar)
-  sci_fi_count <- nrow(sci_fi)
+  sci_fi_count <- if(nrow(sci_fi) > 0) {
+    sci_fi_count <- nrow(sci_fi)
+  } else {
+    sci_fi_count <- 0
+  }
   tv <- filter(tv, release_year == yearvar)
-  tv_count <- nrow(tv)
+  tv_count <- if(nrow(tv) > 0) {
+    tv_count <- nrow(tv)
+  } else {
+    tv_count <- 0
+  }
   thriller <- filter(thriller, release_year == yearvar)
-  thriller_count <- row(thriller)
+  thriller_count <- if(nrow(thriller) > 0) {
+    thriller_count <- nrow(thriller)
+  } else {
+    thrilker_count <- 0
+  }
   war <- filter(war, release_year == yearvar)
-  war_count <- nrow(war)
+  war_count <- if(nrow(war) > 0) {
+    war_count <- nrow(war)
+  } else {
+    war_count <- 0
+  }
   western <- filter(western, release_year == yearvar)
-  western_count <- nrow(western)
-
+  western_count <- if(nrow(western) > 0) {
+    western_count <- nrow(western)
+  } else {
+    western_count <- 0
+  }
+  
   ## Use genre count data to make the bar graph
   plot_ly(data,
     x = ~ yearvar, y = ~ action_count, type = "bar",
@@ -108,7 +184,13 @@ build_graph <- function(data, yearvar) {
     add_trace(y = ~ western_count, name = "Western") %>%
     add_trace(y = ~ war_count, name = "War") %>%
     layout(
-      yaxis = list(title = "Count"),
+      yaxis = list(title = "Count", range = c(0,max(adventure_count, animation_count,
+                                                    comedy_count, crime_count, doc_count,
+                                                    drama_count, fam_count, fantasy_count,
+                                                    hist_count, horror_count, music_count,
+                                                    mystery_count, rom_count, sci_fi_count,
+                                                    tv_count, thriller_count, western_count,
+                                                    war_count))),
       xaxis = list(title = "Release Year"),
       barmode = "Group"
     )

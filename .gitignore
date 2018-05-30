@@ -1,3 +1,14 @@
+<<<<<<< HEAD
 ##API key for movie titles
 
 ./scripts/api.R
+=======
+# History files
+.Rhistory
+
+# Session Data files
+.RData
+
+# Ignore keys
+*api*
+>>>>>>> e2f4e4837a811e2a96ab804c845e1f3a82d7befc

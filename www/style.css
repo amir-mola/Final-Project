@@ -2,14 +2,47 @@ h1 {
   font-family: 'Lobster', cursive;
   font-weight: 500;
   line-height: 1.1;
-  color: #ad1d28;
+  color: #ffffff;
+}
+
+ul{
+  background-color: #bad0ef;
+  padding: 0;
+  color: #ffffff;
+}
+
+h2 {
+  color: #65ade8;
+  font-style: italic;
 }
 
 .navbar {
+<<<<<<< HEAD
   background-color: DeepSkyBlue;
+=======
+  background-color: #ffffff;
+>>>>>>> e2f4e4837a811e2a96ab804c845e1f3a82d7befc
 }
 
 
 body {
+<<<<<<< HEAD
   background-color: lightcyan;
 }
+=======
+  background-color: #e5ffff;
+  color: #45565c;
+}
+
+.people-container div {
+  display: inline-block;
+}
+
+.people-container div img {
+  display: block;
+}
+
+.people-container div h3 {
+  text-align: center;
+}
+>>>>>>> e2f4e4837a811e2a96ab804c845e1f3a82d7befc

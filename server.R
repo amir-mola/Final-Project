@@ -6,7 +6,7 @@ library(lubridate)
 source("scripts/scatter_plot.R")
 source("scripts/movie.R")
 source("scripts/genre_bar.R")
-source("scripts/api.R")
+source("api.R")
 
 data <- read.csv("data/tmdb_data.csv", stringsAsFactor = FALSE)
 a <- ymd(data$release_date)
@@ -25,7 +25,11 @@ shinyServer(function(input, output) {
     return(build_graph(data, input$yearvar))
   })
 
+<<<<<<< HEAD
   output$three_d_plot <- renderPlotly({
+=======
+  output$threeDplot <- renderPlotly({
+>>>>>>> e2f4e4837a811e2a96ab804c845e1f3a82d7befc
     return(three_d_rec(data, as.character(input$movie)))
   })
 })

@@ -20,6 +20,7 @@ shinyUI(navbarPage(
   tabPanel(
     "OVERVIEW",
     tags$div(
+      HTML('<center><img src="https://content.mycutegraphics.com/graphics/movie/movie-night.png" width="400"></center>'),
       tags$h2("Project Overview"), 
       tags$p("This report demonstrates an overview of movie titles, popularities, and genres. The purpose of the report is to provide information regarding highly rated movies so that the viewer can see which year released multiple hits, which genres are popular, and which movie they should watch given their preferences. We believe that the production side of the movie industry could heavily benefit from our data, as it will show general trends amongst movies.
              "), 

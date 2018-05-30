@@ -8,23 +8,29 @@ scatter_plot <- function(dataset, year_start, year_end, genre, rating_low,
                          rating_high) {
   # create new column called "release_year", get rid of NA for "release_year"
   # column
-  dataset$release_year <- as.numeric(format(as.Date(dataset$release_date,
-                                                    "%Y-%m-%d"), "%Y"))
-  completeVec <- complete.cases(dataset[, "release_year"])
-  dataset <- dataset[completeVec, ]
+  dataset$release_year <- as.numeric(format(as.Date(
+    dataset$release_date,
+    "%Y-%m-%d"
+  ), "%Y"))
+  complete_vec <- complete.cases(dataset[, "release_year"])
+  dataset <- dataset[complete_vec, ]
 
   # get genre list
   response <-
-    GET(paste0("https://api.themoviedb.org/3/genre/movie/list?api_key=",
-               api_key))
+    GET(paste0(
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=",
+      api_key
+    ))
   response_content <- content(response, type = "text")
   genre_list <- fromJSON(response_content)$genres
 
   # get language list
-  response_ <-
-    GET(paste0("https://api.themoviedb.org/3/configuration/languages?api_key=",
-               api_key))
-  response_content_ <- content(response_, type = "text")
+  response_new <-
+    GET(paste0(
+      "https://api.themoviedb.org/3/configuration/languages?api_key=",
+      api_key
+    ))
+  response_content_ <- content(response_new, type = "text")
   language_list <- fromJSON(response_content_)
 
   # join dataset with language list

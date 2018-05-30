@@ -145,7 +145,7 @@ build_graph <- function(data, yearvar) {
   thriller_count <- if (nrow(thriller) > 0) {
     thriller_count <- nrow(thriller)
   } else {
-    thrilker_count <- 0
+    thriller_count <- 0
   }
   war <- filter(war, release_year == yearvar)
   war_count <- if (nrow(war) > 0) {

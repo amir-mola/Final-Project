@@ -4,19 +4,26 @@ library(dplyr)
 library(plotly)
 source("api.R")
 
-scatter_plot <- function(dataset, year_start, year_end, genre, rating_low, rating_high) {
-  # create new column called "release_year", get rid of NA for "release_year" column
-  dataset$release_year <- as.numeric(format(as.Date(dataset$release_date, "%Y-%m-%d"), "%Y"))
+scatter_plot <- function(dataset, year_start, year_end, genre, rating_low,
+                         rating_high) {
+  # create new column called "release_year", get rid of NA for "release_year"
+  # column
+  dataset$release_year <- as.numeric(format(as.Date(dataset$release_date,
+                                                    "%Y-%m-%d"), "%Y"))
   completeVec <- complete.cases(dataset[, "release_year"])
   dataset <- dataset[completeVec, ]
 
   # get genre list
-  response <- GET(paste0("https://api.themoviedb.org/3/genre/movie/list?api_key=", api_key))
+  response <-
+    GET(paste0("https://api.themoviedb.org/3/genre/movie/list?api_key=",
+               api_key))
   response_content <- content(response, type = "text")
   genre_list <- fromJSON(response_content)$genres
 
   # get language list
-  response_ <- GET(paste0("https://api.themoviedb.org/3/configuration/languages?api_key=", api_key))
+  response_ <-
+    GET(paste0("https://api.themoviedb.org/3/configuration/languages?api_key=",
+               api_key))
   response_content_ <- content(response_, type = "text")
   language_list <- fromJSON(response_content_)
 

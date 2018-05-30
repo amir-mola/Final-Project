@@ -43,12 +43,14 @@ shinyUI(navbarPage(
               data as they could find movie ratings and recommendations.
 "),
       tags$h2("Data"),
-      tags$p("Using an API from TMBD, we created a dataset that includes 1600
+      tags$p("Using an API from ",
+             tags$a(href="https://www.themoviedb.org/documentation/api", "TMDB"),
+              ", we created a dataset that includes 1600
               movie titles from 1931 to 2018. Along with the title, other
               critical information that our data contains are a vote count,
               vote average, popularity, original language, genre ids, and
-              overview. 
-"),
+              overview. "),
+
       tags$h2("Questions"),
       tags$li("What genres were popular in a given year?"),
       tags$li("Did certain years have more highly voted movies?"),
@@ -57,23 +59,27 @@ shinyUI(navbarPage(
       tags$h2("Structure"),
       tags$li("The first tab is a scatterplot that shows the relationship
                between movies’ years of release and their vote averages. The
-               user is able to select the genre, year and the vote count to
-               find see this relationship more in detail. The data are colored
-               based on the language of the movie. "),
+               user is able to select the genre, year, and the vote count to
+               find this relationship more in detail. The data is colored
+               based on the original language of the movie. "),
       tags$li("The second tab is a bar graph that provides the viewer
                information regarding release years and genres. The user
                selects a year from the side bar and is shown a bar graph of
                the movies released that year categorized by genre. Most movies
                have multiple genres, so there are overlaps within the shown
                data."),
-      tags$li("The last tab shows a 3D plot of maximum of 20 recommended movies
-                (based on the selected movie), and their vote count, vote
-                average and release date. "),
+      tags$li("The last tab shows a 3D plot of a maximum of 20 recommended
+               movies (based on a selected movie), and information regarding
+               the recommended movies' vote counts, vote averages and
+               release dates. "),
       tags$h2("Further Analysis"),
       tags$p("While our analysis does answer some useful questions, we can
               further analyse to answer more specific questions such as:"),
       tags$li("Does the  original language affect the voting ranking as some
             languages are more widely spoken?"),
+      tags$li("Are certain movie genres voted on more than others overall?"),
+      tags$li("What percent of highly voted movies are rated for adults?"),
+      
       tags$h2("Project Creators"),
 
       tags$div(

@@ -15,6 +15,7 @@ response_content <- content(response, type = "text")
 genre_list <- fromJSON(response_content)$genres
 
 shinyUI(navbarPage(
+  theme = "style.css",
   "Information about movies",
   tabPanel(
     "Summary",

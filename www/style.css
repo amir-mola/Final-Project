@@ -2,16 +2,28 @@ h1 {
   font-family: 'Lobster', cursive;
   font-weight: 500;
   line-height: 1.1;
-  color: #ad1d28;
+  color: #ffffff;
+}
+
+ul{
+  background-color: #fcee89;
+  padding: 0;
+  color: #ffffff;
+}
+
+h2 {
+  color: #65ade8;
+  font-family: 'arial';
 }
 
 .navbar {
-  background-color: deepskyblue;
+  background-color: #ffffff;
 }
 
 
 body {
-  background-color: lightcyan;
+  background-color: #e5ffff;
+  color: #45565c;
 }
 
 .people-container div {

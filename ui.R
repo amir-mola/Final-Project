@@ -54,19 +54,27 @@ shinyUI(navbarPage(
         
         tags$div(
           tags$img(src = "/image/amir.jpg", width = "200px", height = "200px"),
-          tags$h5("Amir Mola")
+          tags$h5("Amir Mola"),
+          "Sophomore",
+          tags$br("Computer Science")
         ),
         tags$div(
                  tags$img(src = "/image/katie.jpg", width = "200px", height = "200px"),
-                 tags$h5("Katie Chen")
+                 tags$h5("Katie Chen"),
+                 "Sophomore",
+                 tags$br("dfs")
                 ),
         tags$div(
           tags$img(src = "/image/leona.jpg", width = "200px", height = "200px"),
-          tags$h5("Leona Wada")
+          tags$h5("Leona Wada"),
+          "Junior",
+          tags$br("Economics")
         ),
         tags$div(
           tags$img(src = "/image/jennifer.jpg", width = "200px", height = "200px"),
-          tags$h5("Jennifer Li")
+          tags$h5("Jennifer Li"),
+          "Sophomore",
+          tags$br("Human Centered Design & Engineering")
         )
       )
       

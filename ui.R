@@ -30,6 +30,7 @@ shinyUI(navbarPage(
       tags$h2("Data"),
       tags$p("Using an API from TMBD, we created a dataset that includes 1600 movie titles from 1931 to 2018. Along with the title, other critical information that our data contains are a vote count, vote average, popularity, original language, genre ids, and overview. 
 ")
+      
     )
   ),
                     

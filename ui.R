@@ -16,7 +16,7 @@ genre_list <- fromJSON(response_content)$genres
 
 shinyUI(navbarPage(
   theme = "style.css",
-  "Explore the movie dataset",
+  "MOVIE DATA REPORT",
   tabPanel(
     "OVERVIEW",
     tags$div(

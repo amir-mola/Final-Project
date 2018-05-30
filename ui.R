@@ -18,7 +18,7 @@ shinyUI(navbarPage(
   theme = "style.css",
   "Explore the movie dataset",
   tabPanel(
-    "Summary",
+    "OVERVIEW",
     tags$div(
       tags$h2("Project Overview"), 
       tags$p("This report demonstrates an overview of movie titles, popularities, and genres. The purpose of the report is to provide information regarding highly rated movies so that the viewer can see which year released multiple hits, which genres are popular, and which movie they should watch given their preferences. We believe that the production side of the movie industry could heavily benefit from our data, as it will show general trends amongst movies.
@@ -81,7 +81,7 @@ shinyUI(navbarPage(
     )),
                     
   tabPanel(
-     "Scatterplot",
+     "SCATTER PLOT",
      titlePanel("Explore Movies by Year, Genre, and Vote Averages"),
      tags$p("The first tab is a scatterplot that shows the relationship between movies’ year of release and their vote average. User is able to select the genre, year and the vote count to find see this relationship more in detail. The data are colored based on the language of the movie. 
 "),
@@ -99,7 +99,7 @@ shinyUI(navbarPage(
   ),
                     
   tabPanel(
-     "Barplot",
+     "BAR GRAPH",
      titlePanel("Movies in a Certain Year Categorized by Genre"),
      tags$p("The second tab is a bar graph that provides the viewer information regarding release years 
       and genres. The user selects a year from the side bar and is shown a bar graph of the movies released that year categorized by genre. Most movies have multiple genres, so there are overlaps within the shown data."),
@@ -111,7 +111,7 @@ shinyUI(navbarPage(
      )
   ),
   tabPanel(
-    "3Dplot",
+    "3D PLOT",
     titlePanel("Movie Recommandations Given a Previously Liked Movie"),
     tags$p("The last tab shows a 3D plot of maximum of 20 recommended movies (based on the selected movie), and their vote count, vote average and release date.
             "),
@@ -121,11 +121,5 @@ shinyUI(navbarPage(
       ),
       mainPanel(plotlyOutput("threeDplot"))
     )
-  ),
-  tabPanel(
-    "Source",
-    tags$h4("For this project, we used dataset from ",
-    tags$a(href="https://www.themoviedb.org/documentation/api", "TMDb"))
-    
   )
 ))

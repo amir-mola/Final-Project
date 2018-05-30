@@ -4,12 +4,16 @@ library(dplyr)
 library(plotly)
 source("scripts/api.R")
 
-# returns a 3d plot of the recommended movies based on their vote count,
+#  returns a 3d plot of the recommended movies based on their vote count,
 # vote average and date of released
 three_d_rec <- function(data, movie_name){
+
+# Finding the movie id ----------------------------------------------------
   movie <- filter(data, title == movie_name)
   movie_id <- movie$id
   
+
+# Getting data from the API -----------------------------------------------
   url <- paste0("https://api.themoviedb.org/3/movie/", movie_id,
                 "/recommendations?api_key=", api_key)
   response <- GET(url)

@@ -82,7 +82,7 @@ shinyUI(navbarPage(
                     
   tabPanel(
      "Scatterplot",
-     titlePanel("Movie explore"),
+     titlePanel("Explore Movies by Year, Genre, and Vote Averages"),
      tags$p("The first tab is a scatterplot that shows the relationship between movies’ year of release and their vote average. User is able to select the genre, year and the vote count to find see this relationship more in detail. The data are colored based on the language of the movie. 
 "),
      sidebarLayout(
@@ -100,7 +100,7 @@ shinyUI(navbarPage(
                     
   tabPanel(
      "Barplot",
-     titlePanel("Genres by year"),
+     titlePanel("Movies in a Certain Year Categorized by Genre"),
      tags$p("The second tab is a bar graph that provides the viewer information regarding release years 
       and genres. The user selects a year from the side bar and is shown a bar graph of the movies released that year categorized by genre. Most movies have multiple genres, so there are overlaps within the shown data."),
      sidebarLayout(
@@ -112,7 +112,7 @@ shinyUI(navbarPage(
   ),
   tabPanel(
     "3Dplot",
-    titlePanel("Movie recommandations"),
+    titlePanel("Movie Recommandations Given a Previously Liked Movie"),
     tags$p("The last tab shows a 3D plot of maximum of 20 recommended movies (based on the selected movie), and their vote count, vote average and release date.
             "),
     sidebarLayout(

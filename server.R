@@ -24,6 +24,6 @@ shinyServer(function(input, output) {
   })
   
   output$threeDplot <- renderPlotly({
-    return(three_d_rec(input$movie_name))
+    return(three_d_rec(data, input$movie_name))
   })
 })

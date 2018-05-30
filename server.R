@@ -4,15 +4,9 @@ library(plotly)
 library(lubridate)
 
 source("scripts/scatter_plot.R")
-<<<<<<< HEAD
-source("./scripts/movie.R")
-source("./scripts/genre_bar.R")
-source("./scripts/api.R")
-=======
 source("scripts/movie.R")
 source("scripts/genre_bar.R")
 source("api.R")
->>>>>>> 2e8c9589f6a26032e6ee57110064b9fe37912d7f
 
 data <- read.csv("data/tmdb_data.csv", stringsAsFactor = FALSE)
 a <- ymd(data$release_date)

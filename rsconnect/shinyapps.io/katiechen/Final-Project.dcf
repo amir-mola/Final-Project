@@ -1,0 +1,13 @@
+name: Final-Project
+title: Final-Project
+username:
+account: katiechen
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 350975
+bundleId: 1399826
+url: https://katiechen.shinyapps.io/Final-Project/
+when: 1527664518.24511
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: api.R

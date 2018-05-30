@@ -5,7 +5,7 @@ library(dplyr)
 library(lubridate)
 library(httr)
 library(jsonlite)
-source("scripts/api.R")
+source("api.R")
 
 data <- read.csv("data/tmdb_data.csv", stringsAsFactors = FALSE)
 

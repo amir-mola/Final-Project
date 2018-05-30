@@ -1,6 +1,6 @@
 library(httr)
 library(jsonlite)
-source("scripts/api.R")
+source("api.R")
 library(shiny)
 library(plotly)
 library(lubridate)

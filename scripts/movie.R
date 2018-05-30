@@ -2,7 +2,7 @@ library(httr)
 library(jsonlite)
 library(dplyr)
 library(plotly)
-source("scripts/api.R")
+source("api.R")
 
 #  returns a 3d plot of the recommended movies based on their vote count,
 # vote average and date of released

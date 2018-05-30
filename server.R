@@ -14,15 +14,17 @@ data$release_year <- year(a)
 
 shinyServer(function(input, output) {
   output$scatterplot <- renderPlotly({
-    return(scatter_plot(data, min(input$slider1), max(input$slider1),
-                             input$genre, min(input$slider2), 
-                        max(input$slider2)))
+    return(scatter_plot(
+      data, min(input$slider1), max(input$slider1),
+      input$genre, min(input$slider2),
+      max(input$slider2)
+    ))
   })
-    
+
   output$barplot <- renderPlotly({
     return(build_graph(data, input$yearvar))
   })
-  
+
   output$threeDplot <- renderPlotly({
     return(three_d_rec(data, as.character(input$movie)))
   })

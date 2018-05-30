@@ -1,0 +1,38 @@
+h1 {
+  font-family: 'Lobster', cursive;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+ul{
+  background-color: #bad0ef;
+  padding: 0;
+  color: #ffffff;
+}
+
+h2 {
+  color: #65ade8;
+  font-style: italic;
+}
+
+.navbar {
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #e5ffff;
+  color: #45565c;
+}
+
+.people-container div {
+  display: inline-block;
+}
+
+.people-container div img {
+  display: block;
+}
+
+.people-container div h3 {
+  text-align: center;
+}

@@ -61,8 +61,8 @@ shinyUI(navbarPage(
         tags$div(
                  tags$img(src = "/image/katie.jpg", width = "200px", height = "200px"),
                  tags$h5("Katie Chen"),
-                 "Sophomore",
-                 tags$br("dfs")
+                 "Junior",
+                 tags$br("Statistics")
                 ),
         tags$div(
           tags$img(src = "/image/leona.jpg", width = "200px", height = "200px"),

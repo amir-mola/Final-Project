@@ -3,7 +3,7 @@ library(dplyr)
 library(plotly)
 library(lubridate)
 
-source("./scripts/scatter_plot.R")
+source("scripts/scatter_plot.R")
 source("./scripts/movie.R")
 source("./scripts/genre_bar.R")
 source("./scripts/api.R")

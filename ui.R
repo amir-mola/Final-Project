@@ -44,9 +44,6 @@ shinyUI(navbarPage(
      sidebarLayout(
        sidebarPanel(
         selectInput("yearvar", label = "Please select release year", choices = data$release_year, selected = 4)
-          
-          #numericInput("released_year", label = "Please select a released year", 
-                       #value = "")
        ),
       mainPanel(plotlyOutput("barplot"))
      )
